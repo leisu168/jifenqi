@@ -1,0 +1,99 @@
+.t_title{
+  text-align: center;
+  margin: 5px 0 0 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius:  8px;
+  color: #fff;
+  font-family: "微软雅黑";
+  font-size: 15px;
+  background-color: #3c78d8;
+}
+/*
+@media screen and (min-width:769px){
+  .col-md-8{
+    margin-left: 50px; 
+  }
+}
+@media screen and (min-width:1170px){
+  .col-md-8{
+    margin-left: 100px; 
+  }
+}
+*/
+td,
+th{
+  text-align: center;
+}
+#first_tr{
+  
+  background-color:#ccc;
+  font-weight: bold;
+}
+#delete_all{
+  color: #333;
+  background-color: #fff;
+}
+
+
+
+.setting{
+  margin: 5px 0 0 0;
+
+}
+
+#set_a,
+#set_b,
+#set_c,
+#set_d{
+  text-align: center;
+}
+
+
+
+#add_row,
+#save {
+  float: left;
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 3px 10px 3px 10px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+  width: 82px;
+}
+#save {
+  margin: 3px 0px 3px 10px;
+}  
+
+#add_row:focus,
+#save:focus{
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+#add_row:hover,
+#save:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
+#save_suc{
+  display: none;
+  margin-top: 50px;
+}
+#save_fail{
+  display: none;
+  margin-top: 50px;
+}
