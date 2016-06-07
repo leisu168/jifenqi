@@ -6,8 +6,10 @@
 	<title>计分器</title>
 	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./style.css">
-	<script src="./jquery.min.js" type="text/javascript"></script>
+	<script src="./jquery.min.js"></script>
 	<script src="./bootstrap/js/bootstrap.min.js"></script>
+  
+  
 </head>
 
 <body>
@@ -32,7 +34,7 @@
             	<th class="col-md-1">B</th>
             	<th class="col-md-1">C</th>
             	<th class="col-md-1">D</th>
-            	<th class="col-md-1">*</th>
+            	<th class="col-md-1">清除数据</th>
           </tr>
         </thead>
         <tbody id="tbody1">
@@ -78,8 +80,8 @@
  		 <input type="number" class="form-control" id="set_d" value="0" aria-describedby="sizing-addon2">
 	</div>
 	<div>
-	<input type="button" value="加一局" id="add_row" />
-	<input type="button" value="保存数据" id="save" />
+	 <input type="button" value="加一局" id="add_row" />
+	 <input type="button" value="保存数据" id="save" />
 	</div>
 	
 	<div class="alert alert-danger alert-dismissable" id="save_fail">
@@ -96,14 +98,17 @@
       &times;
    	</button>
    	保存数据成功！
-	</div>
+	</div class="col-md-2 col-sm-12 col-xs-12">
+  <canvas id ="myCanvas"  style="border:1px solid #d3d3d3;" ></canvas>
+  </div>
+</div>
 
-</div>
-</div>
+
 
 
 
 </div>
 <script src="./main.js"></script>
+<script src="./quickwin.js"></script>
 </body>
 </html>
