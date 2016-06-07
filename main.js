@@ -109,6 +109,7 @@ $(document).ready(function(){
 		var $this_row = $('<tr class="'+trows+'"><th scope="row" id="'+trows+'">第'+trows+'局</th><td>'+set_a+'</td><td>'+set_b+'</td><td>'+set_c+'</td><td>'+set_d+'</td><td><button class="delete_c"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td></tr>');
 		$("#tbody").append($this_row);
 
+
 		
 	});
 
@@ -154,7 +155,9 @@ $(document).ready(function(){
 		if (old_data != undefined) {
 			storage.setItem('data',old_data);
 			$("#save_suc").show();
+			if ($("#save_suc").is(":visible")) {
 			setTimeout(function(){$("#save_suc").hide()},5000);
+			}
 		}
 		/*无数据则显示保存失败*/
 		else{
@@ -164,6 +167,43 @@ $(document).ready(function(){
 		/*设置5秒后提示消息消失*/
 		
 	});
+	/*自动保存*/
+	function auto_save() {
+		var old_data = $("#1").parent().parent().html();
+		/*有数据则保存数据*/
+		if (old_data != undefined) {
+			storage.setItem('data',old_data);
+		}
+	}
+	setInterval(auto_save,100);
+	
+
+	/*求四人的平均得分*/
+	function sumaver(){
+		all = a_sum + b_sum + c_sum + d_sum;
+		aver = all/4;
+	};
+	setInterval(sumaver,100);
+
+	/*画图函数*/
+	function startdraw(){
+		var jasonData = {
+   		"title": "个人积分",
+    	"verticaltitle": "积分",
+    	"horizontaltitle": "",
+    	"data": [{ "category": "", "datacollection": [{ "title": "  A", "amount": ""+a_sum+"" }, { "title": "  B", "amount": ""+b_sum+"" }, { "title": "  C", "amount": ""+c_sum+"" }, { "title": "  D", "amount": ""+d_sum+"" }] }]    
+		};
+		if (aver != 0) {
+			$("#myCanvas").show();
+			var c = document.getElementById("myCanvas");
+			var ctx = c.getContext("2d");
+			var v = new histogram(ctx,jasonData,aver); 
+			v.draw();
+		}else{
+			$("#myCanvas").hide();
+		}
+	};
+	setInterval(startdraw,100);
 
 /*
 	storage.setItem("b",0);
@@ -185,3 +225,4 @@ $(document).ready(function(){
 */
 
 });
+	
